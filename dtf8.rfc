@@ -1,0 +1,49 @@
+March, 2018
+
+			DTF-8, Data Transmission Format
+
+Status of this Memo
+
+	UNDER CONSTRACT, Proposal
+
+Copyright Notice
+
+	Created 2018 by Max Lancer https://goo.gl/FFF1Up
+	License: Devil's Contract
+
+Abstract
+
+1. Intro	
+
+2. DTF-8 definition
+
+   In DTF-8, data are encoded using sequences of 1,2,3 and 11 octets.
+Size of data block choosing beetween 1,2 and 8 bytes biggest max.
+
+The table below summarizes the format.
+
+
+Raw data (marked x and o)     DTF-8 octet sequence (binary)
+------------------------------------------------------------------------
+0xxx xxxx                     0xxx xxxx (not changed)
+8       1                
+------------------------------------------------------------------------
+1xxx xxxx                     110- -xxx 10-- xxxx 
+8       1                        ^ ^      ^^ is not used, but reserved
+------------------------------------------------------------------------
+oooo oooo xxxx xxxx           1110 oooo 10oo ooxx 10xx xxxx
+16                1           
+------------------------------------------------------------------------
+oooo oooo ...  xxxx xxxx      1111 oooo
+64                     1      10oo oo..
+                              10.. ....
+                              10.. ....
+                              10.. ....
+                              10.. ....
+                              10.. ....
+                              10.. ....
+                              10.. ....
+                              10.. ..xx
+                              10xx xxxx
+------------------------------------------------------------------------
+
