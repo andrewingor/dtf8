@@ -1,6 +1,6 @@
 March, 2018
 
-			DTF-8, Data Transmission Format
+                  DTF-8, Data Transmission Format
 
 Status of this Memo
 
@@ -17,33 +17,33 @@ Abstract
 
 2. DTF-8 definition
 
-   In DTF-8, data are encoded using sequences of 1,2,3 and 11 octets.
-Size of data block choosing beetween 1,2 and 8 bytes biggest max.
+  In DTF-8, 1, 2 or 8 bytes are encoded using sequences of 2, 3 or 11 octets.
+ASCII symbols is no data and ignored by default for decoding, it can be use
+for control sequence as signal, mark, sum, etc.
 
-The table below summarizes the format.
-
+  The table below summarizes the format.
 
 Raw data (marked x and o)     DTF-8 octet sequence (binary)
 ------------------------------------------------------------------------
-0xxx xxxx                     0xxx xxxx (not changed)
-8       1                
+ASCII encoded to sequence     0xxx xxxx   
+ignore at decode by default   8       1  can use for signal, mark, sum, etc
 ------------------------------------------------------------------------
-1xxx xxxx                     110- -xxx 10-- xxxx 
-8       1                        ^ ^      ^^ is not used, but reserved
+xxxx xxxx                     110- xxxx 10-- xxxx
+8       1                        ^-       ^^-- reserved
 ------------------------------------------------------------------------
 oooo oooo xxxx xxxx           1110 oooo 10oo ooxx 10xx xxxx
 16                1           
 ------------------------------------------------------------------------
 oooo oooo ...  xxxx xxxx      1111 oooo
-64                     1      10oo oo..
-                              10.. ....
-                              10.. ....
-                              10.. ....
-                              10.. ....
-                              10.. ....
-                              10.. ....
-                              10.. ....
-                              10.. ..xx
+64                     1      10oo ooxx
+                              10xx xxxx
+                              10oo oooo
+                              10oo xxxx
+                              10xx xxoo
+                              10oo oooo
+                              10xx xxxx
+                              10xx oooo
+                              10oo ooxx
                               10xx xxxx
 ------------------------------------------------------------------------
 

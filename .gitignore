@@ -4,6 +4,13 @@
 *.app
 *.a
 
+# Objects and libs
+*.o
+
+# Targets
+dtf8enc
+dtf8dec
+
 # Vim 
 *~
 *.swp

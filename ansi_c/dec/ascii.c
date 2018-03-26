@@ -6,6 +6,6 @@
 //
 void ascii(
 ) {
-	putchar(Event);
+	putchar( Event [iter-1] );
 	goto *Begin;
 }

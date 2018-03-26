@@ -7,9 +7,10 @@
 Handle	  Begin = begin
 	, End   = end
 	, Init  = init
+	, Input = input
 	;
 
-int State = 0, Event = 0;
+int State = 0;
 
 Handle	  state1[256]
 	, state2[256]
