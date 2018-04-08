@@ -3,12 +3,10 @@
 
 #include "dtf8enc.h"
 
-unsigned char output[16];
-
 Handle	  Begin = begin
 	, Init  = init
 	, End   = end
-	, State = read
+	, State = recv
 	;
 //
 int main( int	argc
